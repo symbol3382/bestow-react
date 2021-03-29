@@ -1,0 +1,19 @@
+.header .plainAnchor {
+    color: var(--app-dark);
+}
+
+.header .navbar {
+    padding-bottom: 0;
+    padding-top: 0;
+    box-shadow: 0 0 4px 0 var(--app-dark);
+}
+
+.header .hoverDark:hover {
+    background: var(--app-dark);
+    color: #fff;
+    transition: 0.2s;
+}
+
+.header .hoverDark {
+    transition: 0.2s;
+}

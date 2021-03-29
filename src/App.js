@@ -1,28 +1,21 @@
 import './App.css';
-import {setAppName} from "./redux/core/core.actions";
-import {connect} from 'react-redux';
+import React from "react";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
+import Dashboard from "./components/dashboard";
+import urls from "./api/urls";
+import Register from "./components/register";
 
-function App(props) {
-    return (
-        <div className="App">
-            {console.log('propsedsd', props)}
-            <div>App Name : {props.application.name}</div>
-            <button onClick={() => props.setAppName((new Date()).getTime())}>Change Name</button>
-        </div>
-    );
-}
-
-const mapStateToProps = state => {
-    console.log("state", state.core.application);
-    return {
-        application: state.core.application,
+class App extends React.Component {
+    render() {
+        return (
+           <BrowserRouter>
+               <Switch>
+                    <Route path={urls.internal.register} component={Register} />
+                    <Route path={urls.internal.dashboard} component={Dashboard} />
+               </Switch>
+           </BrowserRouter>
+        );
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setAppName: payload => dispatch(setAppName(payload)),
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

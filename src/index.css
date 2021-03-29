@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --app-primary: #007bff;
+  --app-dark: #343a40;
+  --app-dark-om: #343a4088;
+}
+
+.app-primary {
+  background: var(--app-primary);
+}
+
+.app-dark {
+  background: var(--app-dark);
+}
